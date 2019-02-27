@@ -1,9 +1,12 @@
 # Jira Comment
 Add a comment to an issue
 
-Requires [Jira Login Action](https://github.com/marketplace/actions/jira-login)
+For examples on how to use this, check out the [gajira-demo](https://github.com/atlassian/gajira-demo) repository
 
 ## Usage
+
+> ##### Note: this action requires [Jira Login Action](https://github.com/marketplace/actions/jira-login)
+
 To add comment to an issue you need to specify an issue key and a comment in action args, like:
 
 `"Hello from GitHub actions" --issue=INC-2`
