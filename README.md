@@ -8,13 +8,19 @@ For examples on how to use this, check out the [gajira-demo](https://github.com/
 
 > ##### Note: this action requires [Jira Login Action](https://github.com/marketplace/actions/jira-login)
 
-To add comment to an issue you need to specify an issue key and a comment in action args, like:
+To add comment to an issue you need to specify an issue key and a comment as action inputs, like:
 
-`"Hello from GitHub actions" --issue=INC-2`
+```yaml
+- name: Comment on issue
+  uses: atlassian/gajira-comment@master
+  with:
+  issue: INC-2
+  comment: Hello from GitHub actions
+```
 
-You can interpolate fields from GitHub event which triggered the workflow into a comment body. For example, you can specify pusher name in comment body by including `event.pusher.name` field from [push](https://developer.github.com/v3/activity/events/types/#pushevent) event:
+You can interpolate fields from [GitHub event which triggered the workflow](https://help.github.com/en/articles/contexts-and-expression-syntax-for-github-actions#github-context) into a comment body. For example, if you set your workflow to be triggered on the `push` event, you can specify the pusher name in comment body by including `${{ github.event.pusher }}` field from the [push](https://developer.github.com/v3/activity/events/types/#pushevent) event:
 
-    "{{ event.pusher.name }} pushed to repository: {{ event.repository.full_name }}"
+    "${{ github.event.pusher.name }} pushed to repository: ${{ github.event.repository.full_name }}"
 
 Which will result in comment:
 
@@ -26,8 +32,12 @@ Which will result in comment:
 ### Environment variables
 - None
 
-### Arguments
-- `--issue` - An issue key to add a comment for
+### Inputs
+- `issue` - An issue key to add a comment for
+- `comment` - Comment
+
+### Outputs
+- None
 
 ### Reads fields from config file at $HOME/jira/config.yml
 - `issue`
