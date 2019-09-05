@@ -16,7 +16,7 @@ module.exports = class {
 
   async execute () {
     const issueId = this.argv.issue
-    const rawComment = this.argv._.join(' ')
+    const rawComment = this.argv.comment
 
     _.templateSettings.interpolate = /{{([\s\S]+?)}}/g
     const compiled = _.template(rawComment)

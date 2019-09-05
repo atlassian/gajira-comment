@@ -1,0 +1,12 @@
+name: Jira Comment
+description: Add a comment to an issue
+inputs:
+  issue:
+    description: Key of the issue to be commented on
+    required: true
+  comment:
+    description: Comment
+    required: true
+runs:
+  using: 'node12'
+  main: './dist/index.js'

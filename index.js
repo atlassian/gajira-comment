@@ -1,6 +1,6 @@
 const fs = require('fs')
 const YAML = require('yaml')
-const yargs = require('yargs')
+const core = require('@actions/core')
 
 const cliConfigPath = `${process.env.HOME}/.jira.d/config.yml`
 const configPath = `${process.env.HOME}/jira/config.yml`
@@ -36,21 +36,10 @@ async function exec () {
 }
 
 function parseArgs () {
-  yargs
-    .option('issue', {
-      alias: 'i',
-      describe: 'Provide an issue key to add a comment for',
-      demandOption: !config.issue,
-      default: config.issue,
-      type: 'string',
-    })
-
-  yargs
-    .parserConfiguration({
-      'parse-numbers': false,
-    })
-
-  return yargs.argv
+  return {
+    issue: core.getInput('issue'),
+    comment: core.getInput('comment')
+  }
 }
 
 exec()
