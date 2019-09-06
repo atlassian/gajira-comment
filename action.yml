@@ -1,5 +1,8 @@
 name: Jira Add Comment
 description: Add a comment to an issue
+branding:
+  icon: 'align-left'
+  color: 'blue'
 inputs:
   issue:
     description: Key of the issue to be commented on
