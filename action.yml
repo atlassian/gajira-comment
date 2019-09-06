@@ -1,4 +1,4 @@
-name: Jira Comment
+name: Jira Add Comment
 description: Add a comment to an issue
 inputs:
   issue:
