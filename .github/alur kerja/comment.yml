@@ -1,5 +1,7 @@
 on:
   push
+- name: Jira Tambahkan Komentar
+  menggunakan: atlassian/gajira-comment@v2.0.1
 
 name: Test comment
 
