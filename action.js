@@ -1,4 +1,3 @@
-const _ = require('lodash')
 const Jira = require('./common/net/Jira')
 
 module.exports = class {
@@ -16,14 +15,10 @@ module.exports = class {
 
   async execute () {
     const issueId = this.argv.issue
-    const rawComment = this.argv.comment
+    const { comment } = this.argv
 
-    _.templateSettings.interpolate = /{{([\s\S]+?)}}/g
-    const compiled = _.template(rawComment)
-    const interpolatedComment = compiled({ event: this.githubEvent })
-
-    console.log(`Adding comment to ${issueId}: ${interpolatedComment}`)
-    await this.Jira.addComment(issueId, { body: interpolatedComment })
+    console.log(`Adding comment to ${issueId}: \n${comment}`)
+    await this.Jira.addComment(issueId, { body: comment })
 
     return {}
   }
