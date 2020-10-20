@@ -19,12 +19,11 @@ async function exec () {
     }).execute()
 
     if (result) {
-      const yamledResult = YAML.stringify(result)
       const extendedConfig = Object.assign({}, config, result)
 
       fs.writeFileSync(configPath, YAML.stringify(extendedConfig))
 
-      return fs.appendFileSync(cliConfigPath, yamledResult)
+      return
     }
 
     console.log('Failed to comment an issue.')
