@@ -1,5 +1,4 @@
 const Jira = require('./common/net/Jira')
-
 module.exports = class {
   constructor ({ githubEvent, argv, config }) {
     this.Jira = new Jira({
