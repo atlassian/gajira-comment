@@ -6,8 +6,8 @@
   "scripts": {
     "prepare": "husky install",
     "test": "exit 1",
-    "build": "ncc build index.js",
-    "start": "ncc build index.js --watch",
+    "build": "ncc build index.js -s -t",
+    "start": "ncc build index.js --w",
     "lint": "eslint",
     "precommit": "run-p lint build"
   },

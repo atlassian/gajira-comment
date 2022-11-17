@@ -1,4 +1,4 @@
-/******/ (() => { // webpackBootstrap
+require('./sourcemap-register.js');/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 4582:
@@ -166,39 +166,36 @@ module.exports = Jira
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 const fetch = __nccwpck_require__(4429)
-// const moment = require('moment')
 
 module.exports = serviceName => async (state, apiMethod = 'unknown') => {
-  // const startTime = moment.now()
 
-  const response = await fetch(state.req.url, state.req)
+	const response = await fetch(state.req.url, state.req)
 
-  state.res = {
-    headers: response.headers.raw(),
-    status: response.status,
-  }
+	state.res = {
+		headers: response.headers?.raw(),
+		status: response.status,
+	}
 
-  // const totalTime = moment.now() - startTime
-  // const tags = {
-  //   api_method: apiMethod,
-  //   method: state.req.method || 'GET',
-  //   response_code: response.status,
-  //   service: serviceName,
-  // }
+	// const tags = {
+	//   api_method: apiMethod,
+	//   method: state.req.method || 'GET',
+	//   response_code: response.status,
+	//   service: serviceName,
+	// }
 
-  state.res.body = await response.text()
+	state.res.body = await response.text()
 
-  const isJSON = (response.headers.get('content-type') || '').includes('application/json')
+	const isJSON = (response.headers.get('content-type') || '').includes('application/json')
 
-  if (isJSON && state.res.body) {
-    state.res.body = JSON.parse(state.res.body)
-  }
+	if (isJSON && state.res.body) {
+		state.res.body = JSON.parse(state.res.body)
+	}
 
-  if (!response.ok) {
-    throw new Error(response.statusText)
-  }
+	if (!response.ok) {
+		throw new Error(response.statusText)
+	}
 
-  return state
+	return state
 }
 
 
@@ -35721,3 +35718,4 @@ exec()
 module.exports = __webpack_exports__;
 /******/ })()
 ;
+//# sourceMappingURL=index.js.map

@@ -1,8 +1,9 @@
 {
-    "extends": "@atlassian-partner-engineering",
-    "rules": {
-      "no-plusplus": "off",
-      "jest/no-deprecated-functions": "off"
-    }
-  }
-  
+	"extends": [
+		"eslint:recommended"
+	],
+	"rules": {
+		"no-plusplus": "off",
+		"jest/no-deprecated-functions": "off"
+	}
+}
