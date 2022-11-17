@@ -27,7 +27,7 @@ jobs:
         description: Compare branch|${{ github.event.compare }} # https://developer.github.com/v3/activity/events/types/#webhook-payload-example-31
 
     - name: Comment on issue
-      uses: atlassian/gajira-comment@${{ github.sha }}
+      uses: ./dist/index.js
       with:
         issue: ${{ steps.create.outputs.issue }}
         comment: Test comment ${{ github.event.compare }}
