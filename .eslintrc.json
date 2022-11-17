@@ -3,7 +3,5 @@
 		"eslint:recommended"
 	],
 	"rules": {
-		"no-plusplus": "off",
-		"jest/no-deprecated-functions": "off"
 	}
 }
