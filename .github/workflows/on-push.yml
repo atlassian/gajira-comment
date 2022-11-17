@@ -22,7 +22,7 @@ jobs:
       uses: atlassian/gajira-create@master
       with:
         project: COM
-        issuetype: Build
+        issuetype: Task
         summary: Issue for comment ${{ github.repository }}
         description: Compare branch|${{ github.event.compare }} # https://developer.github.com/v3/activity/events/types/#webhook-payload-example-31
 
