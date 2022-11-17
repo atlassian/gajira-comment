@@ -1,15 +1,17 @@
 {
-  "name": "comment",
+  "name": "@atlassian/gajira-comment",
   "version": "3.0.0",
-  "description": "",
+  "description": "Add a comment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "test": "exit 1",
     "build": "ncc build index.js",
     "start": "ncc build index.js --watch",
-    "lint": "eslint"
+    "lint": "eslint",
+    "precommit": "run-p lint build"
   },
-  "author": "Atlassian",
+  "author": "Atlassian <github@atlassian.com>",
   "license": "ISC",
   "dependencies": {
     "@actions/core": "^1.10.0",
@@ -21,6 +23,8 @@
   "devDependencies": {
     "@atlassian-partner-engineering/eslint-config": "^4.0.0",
     "@vercel/ncc": "^0.34.0",
-    "eslint": "^8.27.0"
+    "eslint": "^8.27.0",
+    "husky": "^8.0.2",
+    "npm-run-all": "^4.1.5"
   }
 }
