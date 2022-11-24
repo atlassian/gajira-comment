@@ -1,6 +1,6 @@
 {
   "name": "@atlassian/gajira-comment",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Add a comment",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,6 @@
     "yaml": "^2.1.3"
   },
   "devDependencies": {
-    "@atlassian-partner-engineering/eslint-config": "^4.0.0",
     "@vercel/ncc": "^0.34.0",
     "eslint": "^8.27.0",
     "husky": "^8.0.2",
