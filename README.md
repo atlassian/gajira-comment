@@ -1,3 +1,7 @@
+---------
+⚠️ This repository isn’t maintained anymore.
+---------
+
 # Jira Comment
 
 Add a comment to an issue
